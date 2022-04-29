@@ -42,5 +42,21 @@ public class EmployeeService {
 		return repository.save(employee);
 	}
 	
+	public Employee updateEmployee(Employee employee) {
+//		return null;
+		System.out.println("upd employee");
+		return repository.save(employee);
+	}
+	public Employee deleteEmployee(int employeeId) {
+//		return null;
+		Employee emp=repository.findById(employeeId).get();
+		System.out.println("del employee");
+		repository.delete(emp);
+		return emp;
+	}
+	public Employee getEmployeeByfn(String fn) {
+		System.out.println("get employee "+fn);
+		return repository.findByFirstName(fn).get(0);
+	}
 	
 }
