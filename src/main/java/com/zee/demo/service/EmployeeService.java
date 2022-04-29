@@ -80,16 +80,44 @@ public class EmployeeService {
 //		return null;
 //		System.out.println("upd employee");
 		LOG.info("updateEmployees");
-		return repository.save(employee);
+		
+		
+		Optional<Employee> empOpt=repository.findById(employee.getEmployeeId());
+		if(empOpt.isPresent()) {
+			return repository.save(employee);
+		}
+		else {
+			LOG.warn("employee with id "+employee.getEmployeeId()+" doesnt exists");
+			return null;
+		}
+		
 	}
+	
+	
+	
+	
 	public Employee deleteEmployee(int employeeId) {
 //		return null;
-		Employee emp=repository.findById(employeeId).get();
+//		Employee emp=repository.findById(employeeId).get();
 //		System.out.println("del employee");
 		
-		LOG.info("deleteEmployee "+employeeId);
-		repository.delete(emp);
-		return emp;
+		
+		
+		Optional<Employee> empOpt=repository.findById(employeeId);
+		if(empOpt.isPresent()) {
+			Employee emp=repository.findById(employeeId).get();
+			repository.delete(emp);
+			return emp;
+		}
+		else {
+			LOG.warn("employee with id "+employeeId+" doesnt exists");
+			return null;
+		}
+		
+		
+//		LOG.info("deleteEmployee "+employeeId);
+//		repository.delete(emp);
+//		return emp;
 	}
 	public Employee getEmployeeByfn(String fn) {
 //		System.out.println("get employee "+fn);

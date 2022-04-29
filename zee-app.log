@@ -49,3 +49,6 @@
 2022-04-29 11:44:49.817  INFO 31672 --- [http-nio-8888-exec-6] com.zee.demo.service.EmployeeService     : getAllEmployeeById102
 2022-04-29 11:44:54.093  INFO 31672 --- [http-nio-8888-exec-7] com.zee.demo.service.EmployeeService     : getAllEmployeeById101
 2022-04-29 11:44:56.780  INFO 31672 --- [http-nio-8888-exec-8] com.zee.demo.service.EmployeeService     : getAllEmployeeById103
+2022-04-29 11:47:35.622  INFO 31672 --- [Thread-31] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-04-29 11:47:35.623  INFO 31672 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2022-04-29 11:47:35.630  INFO 31672 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.

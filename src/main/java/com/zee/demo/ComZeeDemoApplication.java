@@ -1,5 +1,7 @@
 package com.zee.demo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,13 +11,18 @@ import com.zee.demo.model.Employee;
 
 @SpringBootApplication
 public class ComZeeDemoApplication {
+	
+	
+
+	
+	private final static Logger LOG = LoggerFactory.getLogger(ComZeeDemoApplication.class);
 
 	public static void main(String[] args) {
-		System.out.println("start");
+		LOG.info("Start");
 		SpringApplication.run(ComZeeDemoApplication.class, args);
-
 		//run() is a static method 
-		System.out.println("end");
+		LOG.info("End");
+
 		
 		
 //		EmployeeService service = new EmployeeService();
@@ -24,8 +31,6 @@ public class ComZeeDemoApplication {
 //		service.addEmployee(emp1);
 //		
 //		System.out.println(service.getAllEmployees().toString());
-		
-		
 		
 	}
 
